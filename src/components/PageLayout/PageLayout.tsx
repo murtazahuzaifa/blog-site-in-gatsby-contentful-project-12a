@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import NavBar from './NavBar';
-import Footer from './Footer';
-export interface Props { };
+import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
+
+export interface Props {  };
 
 const PageLayout: FC<Props> = ({ children }) => {
     return (
