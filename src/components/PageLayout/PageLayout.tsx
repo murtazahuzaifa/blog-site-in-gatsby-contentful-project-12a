@@ -9,6 +9,7 @@ const PageLayout: FC<Props> = ({ children }) => {
         <div className={`${'pageLayout'}`} >
             <NavBar />
             {children}
+            <div><hr/></div>
             <Footer/>
         </div>
     )
