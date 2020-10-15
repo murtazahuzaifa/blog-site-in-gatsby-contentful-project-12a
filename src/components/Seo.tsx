@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import {MetaTagType, LinkTagType} from '../typedefs';
+import { MetaTagType, LinkTagType } from '../typedefs';
 
 export interface Props {
   description?: string,
@@ -11,7 +11,7 @@ export interface Props {
   title: string,
 }
 
-const SEO: FC<Props> = ({ description, lang='en', meta=[], link=[], title }) => {
+const SEO: FC<Props> = ({ description, lang = 'en', meta = [], link = [], title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -37,7 +37,7 @@ const SEO: FC<Props> = ({ description, lang='en', meta=[], link=[], title }) => 
 
       link={[
         { rel: 'icon', href: "https://organicread.com/wp-content/uploads/2020/02/organic-read-favicon-300x300.png" },
-        ...link      
+        ...link
       ]}
 
       meta={[

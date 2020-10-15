@@ -1,0 +1,95 @@
+.navBar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: aqua;
+    background-image: url("https://thumbs.dreamstime.com/b/panorama-beautiful-green-forest-summer-nature-scenery-yellow-wild-flowers-panorama-beautiful-green-forest-landscape-131579660.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ////////////////////////////// top ///////////////////////////// */
+.top{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(255, 255, 255, 0.452); */
+    background: linear-gradient( 180deg ,rgba(255, 255, 255, 0.664) 60%, rgba(0, 0, 0, 0.411)100%);
+
+}
+
+/* ////////////////////////////// bottom ///////////////////////////// */
+.bottom{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px 15px;
+    background-color: rgba(0, 0, 0, 0.411);
+}
+
+.bottom > div{
+    display: flex;
+}
+
+/* ////////////////////////////// left ///////////////////////////// */
+.left{
+    /* background-color: burlywood;  */
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+.left > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.left > ul > li{
+    list-style: none;
+    padding: 10px;
+    color: whitesmoke;
+    transition: 0.15s ease-in-out;
+}
+.left > ul > li:hover{
+    background-color: rgba(72, 124, 55, 0.548);
+}
+.left a { text-decoration: none; color: whitesmoke;}
+/* ////////////////////////////// mid ///////////////////////////// */
+.mid {
+    /* background-color: coral; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.mid > .logo{}
+/* ////////////////////////////// right ///////////////////////////// */
+.right {
+    /* background-color: rgba(255, 255, 255, 0.322); */
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 8px;
+}
+.right > input {
+    background-color: rgba(0,0,0,0);
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    padding: 5px;
+    color: whitesmoke;
+    outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: whitesmoke;
+    opacity: 0.8; 
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: whitesmoke; opacity: 0.8;
+  }

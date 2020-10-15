@@ -1,14 +1,31 @@
 import React, { FC } from 'react';
 import {Facebook, Instagram, Gmail, Pinterest, Twitter} from 'mdi-material-ui';
 import {Typography} from '@material-ui/core'
+import {useStaticQuery, graphql} from 'gatsby';
+import {StaticQueryType} from '../../typedefs';
 
 export interface Props { };
 
+
+
 const Footer: FC<Props> = () => {
+
+    const { site } = useStaticQuery<StaticQueryType>(
+        graphql`
+          query {
+            site {
+              siteMetadata {
+                logoSrc
+              }
+            }
+          }
+        `
+      )
+
     return (
         <div className={`${'footer'}`}>
             <div>
-                <img width='100px' src="https://organicread.com/wp-content/uploads/2020/02/organic-read-retina-logo-for-wp.png" alt="logo" />
+                <img width='100px' src={site.siteMetadata.logoSrc} alt="logo" />
             </div>
             <div>
                 <Typography variant='h6' >ABOUT US</Typography>
