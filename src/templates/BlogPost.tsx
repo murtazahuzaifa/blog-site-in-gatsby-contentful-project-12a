@@ -47,7 +47,9 @@ const BlogPost: FC<PageProps<{}, Props>> = ({ pageContext, pageResources }) => {
             <Seo title='Contact' />
             <div className={`${style.container}`} >
                 <h1>{title}</h1>
-                <img src={imgSrc} alt={title} style={{ width: '100%' }} />
+                <br/>
+                <div><img src={imgSrc} alt={title} style={{ width: '100%' }} /></div>
+                <br/>
                 <div className={`${style.content}`} >
                     {documentToReactComponents(content, options)}
                 </div>
