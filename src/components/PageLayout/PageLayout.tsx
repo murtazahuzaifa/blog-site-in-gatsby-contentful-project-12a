@@ -1,16 +1,22 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
+import style from './PageLayout.module.css';
+import Breadcrumb from '../Breadcrumb';
 
-export interface Props {  };
+export interface Props { children?: ReactNode, path: string };
 
-const PageLayout: FC<Props> = ({ children }) => {
+const PageLayout: FC<Props> = ({ children, path }) => {
+
     return (
-        <div className={`${'pageLayout'}`} >
+        <div >
             <NavBar />
-            {children}
-            <div><hr/></div>
-            <Footer/>
+            {path === '/' ? null : <div className={`${style.breadcrumb}`} ><Breadcrumb path={path} /></div>}
+            <div className={`${style.pageLayout}`} >
+                {children}
+            </div>
+            <div></div>
+            <Footer />
         </div>
     )
 }

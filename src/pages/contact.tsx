@@ -5,9 +5,9 @@ import Seo from '../components/Seo'
 
 interface Props { }
 
-const contact: FC<PageProps<Props>> = ({}) => {
+const contact: FC<PageProps<Props>> = ({pageResources}) => {
     return (
-        <PageLayout>
+        <PageLayout path={pageResources.page.path}>
             <Seo title='Contact' />
             <h1> This is Contact page </h1>
             

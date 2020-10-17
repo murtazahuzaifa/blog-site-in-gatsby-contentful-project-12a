@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import {Facebook, Instagram, Gmail, Pinterest, Twitter} from 'mdi-material-ui';
-import {Typography} from '@material-ui/core'
-import {useStaticQuery, graphql} from 'gatsby';
-import {StaticQueryType} from '../../typedefs';
+import { Facebook, Instagram, Gmail, Pinterest, Twitter } from 'mdi-material-ui';
+import { Typography, IconButton } from '@material-ui/core'
+import { useStaticQuery, graphql } from 'gatsby';
+import style from './Footer.module.css';
+import {Logo} from '../Images';
 
 export interface Props { };
 
@@ -10,37 +11,39 @@ export interface Props { };
 
 const Footer: FC<Props> = () => {
 
-    const { site } = useStaticQuery<StaticQueryType>(
-        graphql`
-          query {
-            site {
-              siteMetadata {
-                logoSrc
-              }
-            }
-          }
-        `
-      )
+    // const { site } = useStaticQuery<StaticQueryType>(
+    //     graphql`
+    //       query {
+    //         site {
+    //           siteMetadata {
+    //             logoSrc
+    //           }
+    //         }
+    //       }
+    //     `
+    // )
 
     return (
-        <div className={`${'footer'}`}>
-            <div>
-                <img width='100px' src={site.siteMetadata.logoSrc} alt="logo" />
+        <div className={`${style.footer}`}>
+            <div className={`${style.logo}`} >
+                <Logo width='120px' />
             </div>
-            <div>
+            <div className={`${style.about}`} >
                 <Typography variant='h6' >ABOUT US</Typography>
                 <Typography variant='body2'  >
-                    Organic Read is to aware people of the organic lifestyle and its benefits. You can explore the best material to read about the importance of organic food, healthcare, products and much more. Kudos for you to be here!
+                    DIY is to aware people about the benefits of useful wastes and hidden talent.
+                    DIY has its place. This is especially true when it comes to money-related matters 
+                    You can explore the best material to read about the different diy home projects. 
                 </Typography>
             </div>
-            <div>
+            <div className={`${style.followLinks}`} >
                 <Typography variant='h6' >FOLLOW US</Typography>
                 <div>
-                    <span><Facebook/></span>
-                    <span><Instagram/></span>
-                    <span><Gmail/></span>
-                    <span><Pinterest/></span>
-                    <span><Twitter/></span>
+                    <span><IconButton><Facebook /></IconButton></span>
+                    <span><IconButton><Instagram /></IconButton></span>
+                    <span><IconButton><Gmail /></IconButton></span>
+                    <span><IconButton><Pinterest /></IconButton></span>
+                    <span><IconButton><Twitter /></IconButton></span>
                 </div>
             </div>
         </div>

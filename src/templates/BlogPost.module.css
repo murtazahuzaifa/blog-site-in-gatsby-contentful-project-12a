@@ -1,0 +1,12 @@
+.container{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content > div {
+    margin-bottom: 10px ;
+}
+.content  .content-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -4,9 +4,9 @@ import PageLayout from '../components/PageLayout/PageLayout';
 import Seo from '../components/Seo'
 interface Props { }
 
-const NotFoundPage: FC<PageProps<Props>> = () => {
+const NotFoundPage: FC<PageProps<Props>> = ({pageResources}) => {
     return (
-        <PageLayout>
+        <PageLayout path={pageResources.page.path} >
             <Seo title='Page not found' />
             <div>
                 <h1>NOT FOUND</h1>

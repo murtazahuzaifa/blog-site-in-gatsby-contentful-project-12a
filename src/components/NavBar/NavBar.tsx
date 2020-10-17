@@ -5,28 +5,29 @@ import { Typography } from '@material-ui/core';
 import { StaticQueryType } from '../../typedefs';
 import { Magnify } from 'mdi-material-ui';
 // import {Nature} from 'mdi-material-ui';
+import { Logo } from '../Images';
 
 export interface Props { }
 
 const NavBar: FC<Props> = () => {
 
-    const { site } = useStaticQuery<StaticQueryType>(
-        graphql`
-          query {
-            site {
-              siteMetadata {
-                logoSrc
-              }
-            }
-          }
-        `
-    )
+    // const { site } = useStaticQuery<StaticQueryType>(
+    //     graphql`
+    //       query {
+    //         site {
+    //           siteMetadata {
+    //             logoSrc
+    //           }
+    //         }
+    //       }
+    //     `
+    // )
 
     return (
         <div className={`${style.navBar}`} >
             <div className={`${style.top}`} >
                 <div className={`${style.logo}`} >
-                    <a href="/"><img className={`${style.logo}`} width='100px' src={site.siteMetadata.logoSrc} alt="logo" /></a>
+                    <a href="/"><Logo /></a>
                 </div>
             </div>
             <div className={`${style.bottom}`} >
@@ -41,7 +42,7 @@ const NavBar: FC<Props> = () => {
                 <div className={`${style.mid}`} > </div>
                 <div className={`${style.right}`} >
                     <input type="text" placeholder='Search blog' />
-                    <span style={{color:'whitesmoke'}} ><Magnify color='inherit' /></span>
+                    <span style={{ color: 'whitesmoke' }} ><Magnify color='inherit' /></span>
                 </div>
             </div>
         </div>

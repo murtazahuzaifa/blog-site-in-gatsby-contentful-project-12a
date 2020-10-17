@@ -5,9 +5,10 @@ import Seo from '../components/Seo'
 
 interface Props { }
 
-const about: FC<PageProps<Props>> = ({}) => {
+const about: FC<PageProps<Props>> = ({uri}) => {
+    console.log(uri)
     return (
-        <PageLayout>
+        <PageLayout path={uri} >
             <Seo title='About' />
             <h1>This is About page</h1>
             

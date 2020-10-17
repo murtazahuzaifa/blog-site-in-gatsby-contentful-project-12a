@@ -7,7 +7,7 @@ import { JsonObjectExpression } from 'typescript';
 interface Props { }
 
 type querySchema = {
-    allContentfulPosts: {
+    allContentfulBlog: {
         nodes: {
             title: string,
             slug: string,
@@ -16,6 +16,7 @@ type querySchema = {
                     src: string,
                 },
             },
+            category: { name: string }[]
             content: {
                 json: JsonObjectExpression
             },
@@ -23,17 +24,17 @@ type querySchema = {
     },
 }
 
-const blog: FC<PageProps<querySchema, Props>> = ({ data, path }) => {
+const blog: FC<PageProps<querySchema, Props>> = ({ data, path, uri }) => {
 
-    const { nodes } = data.allContentfulPosts;
+    const { nodes } = data.allContentfulBlog;
 
     return (
-        <PageLayout>
+        <PageLayout path={uri} >
             <Seo title='Blog' />
             <h1> ALL BLOGS </h1>
             <ul>
-                {nodes.map(({ slug, title }, idx) => (
-                    <li key={idx}><a href={path + slug}>{title}</a></li>
+                {nodes.map(({ slug, title, category }, idx) => (
+                    <li key={idx}><a href={`${path}${category[0].name}/${slug}`}>{title}</a></li>
                 ))}
             </ul>
         </PageLayout>
@@ -42,21 +43,24 @@ const blog: FC<PageProps<querySchema, Props>> = ({ data, path }) => {
 
 export const query = graphql`
 {
-    allContentfulPosts {
-        nodes {
-        title
-        slug
-        mainImage {
-            fluid {
-            src
+            allContentfulBlog {
+                nodes {
+                    title
+                    slug
+                    mainImage {
+                        fluid {
+                            src
+                        }
+                    }
+                    category {
+                        name
+                    }
+                    content {
+                        json
+                    }
+                }
             }
         }
-        content {
-            json
-        }
-        }
-    }
-}
 `
 
 export default blog;
