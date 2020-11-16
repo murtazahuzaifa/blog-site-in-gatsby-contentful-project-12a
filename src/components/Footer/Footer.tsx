@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Facebook, Instagram, Gmail, Pinterest, Twitter } from 'mdi-material-ui';
 import { Typography, IconButton } from '@material-ui/core'
 import { useStaticQuery, graphql } from 'gatsby';
-import style from './Footer.module.css';
+const style = require('./Footer.module.css');
 import {Logo} from '../Images';
 
 export interface Props { };

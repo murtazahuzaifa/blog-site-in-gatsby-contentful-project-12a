@@ -1,12 +1,14 @@
+.pageLayout{
+    background-color: rgb(235, 230, 230);
+}
+
 .breadcrumb{
     margin: 30px 20px 0 20px ;
 }
 
-.pageLayout{
+.childContainer{
     max-width: 1024px;
     min-width: 360px;
     margin: 30px auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
-
-/* .pageLayout > */

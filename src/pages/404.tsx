@@ -1,12 +1,19 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { PageProps } from 'gatsby';
 import PageLayout from '../components/PageLayout/PageLayout';
 import Seo from '../components/Seo'
 interface Props { }
 
-const NotFoundPage: FC<PageProps<Props>> = ({pageResources}) => {
+const NotFoundPage: FC<PageProps<Props>> = ({pageResources, uri}) => {
+    let path = '/';
+    useEffect(()=>{
+        path = window.location.pathname
+    })
+
     return (
-        <PageLayout path={pageResources.page.path} >
+        // <PageLayout path={pageResources.page.path} >
+        
+        <PageLayout path={path} >
             <Seo title='Page not found' />
             <div>
                 <h1>NOT FOUND</h1>

@@ -1,8 +1,7 @@
 import React, { FC, CSSProperties } from 'react';
 import { useStaticQuery, graphql } from "gatsby";
-import logo from '../images/logo.svg';
+const logo = require('../images/logo.svg');
 import { StaticQueryType } from '../typedefs';
-import Img from "gatsby-image";
 
 interface Props {
   className?: string

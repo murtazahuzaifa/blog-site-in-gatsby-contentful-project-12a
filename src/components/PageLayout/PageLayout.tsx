@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
-import style from './PageLayout.module.css';
+const style = require('./PageLayout.module.css');
 import Breadcrumb from '../Breadcrumb';
 
 export interface Props { children?: ReactNode, path: string };
@@ -9,10 +9,10 @@ export interface Props { children?: ReactNode, path: string };
 const PageLayout: FC<Props> = ({ children, path }) => {
 
     return (
-        <div >
+        <div className={`${style.pageLayout}`} >
             <NavBar />
             {path === '/' ? null : <div className={`${style.breadcrumb}`} ><Breadcrumb path={path} /></div>}
-            <div className={`${style.pageLayout}`} >
+            <div className={`${style.childContainer}`} >
                 {children}
             </div>
             <div></div>

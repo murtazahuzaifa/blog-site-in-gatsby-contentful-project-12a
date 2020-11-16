@@ -36,7 +36,7 @@ const SEO: FC<Props> = ({ description, lang = 'en', meta = [], link = [], title 
       title={title}
 
       link={[
-        { rel: 'icon', href: "https://organicread.com/wp-content/uploads/2020/02/organic-read-favicon-300x300.png" },
+        { rel: 'icon', href: require('../images/logo.svg') },
         ...link
       ]}
 

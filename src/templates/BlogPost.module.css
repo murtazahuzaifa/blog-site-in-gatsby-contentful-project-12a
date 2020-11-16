@@ -5,6 +5,13 @@
 .content > div {
     margin-bottom: 10px ;
 }
+
+.blogImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .content  .content-img{
     display: flex;
     justify-content: center;
