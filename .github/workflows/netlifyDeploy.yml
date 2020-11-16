@@ -32,7 +32,7 @@ jobs:
       
       #  creating .env file
       - run: echo 'CONTENTFUL_SPACE_ID = ${{ secrets.CONTENTFUL_SPACE_ID }} ' > .env
-      - run: echo 'CONTENTFUL_ACCESS_TOKEN = ${{ secrets.CONTENTFUL_CONTENT_DELIVERY_API }} ' >> .env
+      - run: echo 'CONTENTFUL_ACCESS_TOKEN = ${{ secrets.CONTENTFUL_ACCESS_TOKEN }} ' >> .env
       
       - name: Build Gatsby Site
         uses: jzweifel/gatsby-cli-github-action@master
