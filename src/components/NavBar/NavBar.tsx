@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
-const style = require('./navBar.module.css');
+const style = require('./NavBar.module.css');
 import { Typography } from '@material-ui/core';
-import { StaticQueryType } from '../../typedefs';
+// import { StaticQueryType } from '../../typedefs';
 import { Magnify } from 'mdi-material-ui';
 // import {Nature} from 'mdi-material-ui';
 import { Logo } from '../Images';

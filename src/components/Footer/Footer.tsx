@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Facebook, Instagram, Gmail, Pinterest, Twitter } from 'mdi-material-ui';
 import { Typography, IconButton } from '@material-ui/core'
-import { useStaticQuery, graphql } from 'gatsby';
+// import { useStaticQuery, graphql } from 'gatsby';
 const style = require('./Footer.module.css');
 import {Logo} from '../Images';
 
