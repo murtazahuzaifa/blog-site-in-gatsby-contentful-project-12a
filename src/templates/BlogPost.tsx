@@ -20,7 +20,7 @@ const options: Options = {
                     key={node.data.target.fields.file['en-US'].url}
                     src={node.data.target.fields.file['en-US'].url}
                     title={node.data.target.fields.title['en-US']}
-                    // style={{ width:'80%' }}
+                    style={{ width:'80%' }}
                 /></div>
             )
         },
@@ -49,7 +49,7 @@ const BlogPost: FC<PageProps<{}, Props>> = ({ pageContext, pageResources, uri })
             <div className={`${style.container}`} >
                 <h1>{title}</h1>
                 <br/>
-                <div className={`${style.blogImg}`} ><img src={imgSrc} alt={title} style={{ maxWidth: '700px' }} /></div>
+                <div className={`${style.blogImg}`} ><img src={imgSrc} alt={title} style={{ width: '100%' }} /></div>
                 <br/>
                 <div className={`${style.content}`} >
                     {documentToReactComponents(content, options)}

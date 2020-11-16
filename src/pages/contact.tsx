@@ -6,13 +6,9 @@ import Seo from '../components/Seo'
 
 interface Props { }
 
-const contact: FC<PageProps<Props>> = ({}) => {
-    let path = '/';
-    useEffect(()=>{
-        path = window.location.pathname
-    })
+const contact: FC<PageProps<Props>> = ({uri}) => {
     return (
-        <PageLayout path={path}>
+        <PageLayout path={uri}>
             <Seo title='Contact' />
             <Typography variant='h2' > Contact </Typography>
             <Typography variant='body1' >

@@ -11,7 +11,7 @@ const PageLayout: FC<Props> = ({ children, path }) => {
     return (
         <div className={`${style.pageLayout}`} >
             <NavBar />
-            {path === '/' ? null : <div className={`${style.breadcrumb}`} ><Breadcrumb path={path} /></div>}
+            <div style={{display:path === '/'?'none':'unset'}} className={`${style.breadcrumb}`} ><Breadcrumb path={path} /></div>
             <div className={`${style.childContainer}`} >
                 {children}
             </div>
